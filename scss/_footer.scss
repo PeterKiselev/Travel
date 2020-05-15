@@ -1,0 +1,26 @@
+.footer {
+    background-color: $body-bg;
+    padding: 50px 0;
+
+    @media screen and (min-width: 768px) {
+        padding-top: 100px;
+    }
+
+    &__head {
+        margin-bottom: 20px;
+    }
+    &__title {
+        font-size: 2.4rem;
+        margin-bottom: .6em;
+        letter-spacing: .22em;
+    }
+    &__subtitle {
+        letter-spacing: $letter-space;
+    }
+
+    &__logo {
+        @include hover {
+            color: $primary-color;
+        }
+    }
+}

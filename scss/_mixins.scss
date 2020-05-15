@@ -1,0 +1,38 @@
+@mixin font($ff: inherit, $fz: inherit, $fc: inherit, $fw: 400, $lh: 1.6) {
+    font-family: $ff;
+    font-weight: $fw;
+    font-size: $fz;
+    color: $fc;
+    line-height: $lh;
+}
+
+@mixin posA($top: 0, $right: 0, $bottom: 0, $left: 0) {
+    position: absolute;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left; 
+}
+
+@mixin transform($delta_x: -50%, $delta_y: -50%) {
+    transform: translate($delta_x, $delta_y);
+}
+
+@mixin flex($jc: space-between, $ali: center, $df: flex) {
+    display: $df;
+    justify-content: $jc;
+    align-items: $ali;
+}
+
+@mixin tr($dur: .3s) {
+    transition: all $dur linear;
+}
+
+@mixin hover() {
+    @include tr;
+    &:hover,
+    &:focus,
+    &:active {
+        @content;
+    }
+}

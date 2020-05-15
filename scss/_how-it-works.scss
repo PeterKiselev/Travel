@@ -1,0 +1,88 @@
+.section {
+    &--how-it-works {
+        min-height: auto;
+        padding: 0;
+    }
+}
+
+.choose-order {
+    padding: 100px 0;
+    position: relative;
+
+    .row {
+        flex-wrap: nowrap;
+        @media screen and (max-width: 767px) {
+            flex-wrap: wrap;
+        }
+        .col + .col {
+            margin: 0;
+        }
+    }
+
+    &__icon {
+        display: inline-block;
+        position: relative;
+        width: 65px;
+        height: 65px;
+        position: relative;
+        z-index: 2;
+
+        &:before {
+            content: '';
+            position: absolute;
+            display: none;
+            width: 80px;
+            height: 80px;
+            top: 50%;
+            left: 50%;
+            @include transform;
+            background-color: $section-bg;
+            z-index: 1;
+
+            @media screen and (min-width: 768px) {
+                display: inline-block;
+            }
+        }
+
+        svg {
+            max-width: 100%;
+            position: relative;
+            z-index: 2;
+        }
+    }
+    &__title {
+        margin-top: 15px;
+        word-wrap: break-word;
+        @include font($ff: $section-title-ff, $fz: 3rem, $lh: 1);
+        text-transform: capitalize;
+
+        @media screen and (min-width: 992px) {
+            font-size: 3.6rem;
+            margin-top: 30px;
+        }
+    }
+    &__arrows {
+        margin: 20px 0;
+        fill: $body-color;
+
+        @media screen and (min-width: 768px) {
+            display: none;
+        }
+    }
+    
+    
+}
+
+.dotted {
+    @include posA(15%, 15%, auto, 15%);
+    display: none;
+    z-index: 1;
+    height: 100%;
+    width: 70%;
+    max-width: 100%;
+    max-height: 100px;
+
+    @media screen and (min-width: 768px) {
+        display: inline-block;
+    }
+}
