@@ -48,10 +48,9 @@
         @include posA(50%, auto, auto, 50%);
         @include transform;
     }
-    &__blockquote {
+    &__figcaption {
         flex-grow: 1;
         flex-basis: 100%;
-        margin: 0px;
         padding: 20px 15px;
 
         @media screen and (min-width: 992px) {
@@ -68,7 +67,8 @@
         font-style: normal;
         opacity: .95;
     }
-    &__text {
+    &__blockquote {
+        margin: 0;
         text-indent: 1.5em;
         text-align: justify;
         position: relative;

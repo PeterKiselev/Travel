@@ -57,6 +57,9 @@
 
     &__img {
         max-width: 100%;
+        image-rendering: -moz-crisp-edges; /* Firefox */
+        -ms-interpolation-mode: nearest-neighbor;  /* IE */
+        image-rendering: crisp-edges; /* Стандартное свойство */
 
         @include hover {
             transform: scale(1.1);
