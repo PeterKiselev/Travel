@@ -143,7 +143,6 @@ body {
     min-height: 100vh;
     padding: 50px 0;
     background-color: $section-bg;
-    text-align: center;
 
     @media screen and (min-width: 992px) {
         padding-top: 100px;
@@ -151,6 +150,7 @@ body {
     }
     // модификатор
     &--bg {
+        will-change: transform;
         background-attachment: scroll;
         background-position: center;
         background-size: cover;
@@ -160,31 +160,25 @@ body {
             background-attachment: fixed;
         }
     }
-    &--left {
+    &--center {
+        text-align: center;
+    }
+    // элементы
+    &__title {
+        text-align: center;
+        text-transform: capitalize;
+        @include font($section-title-ff, 3.6rem, $section-title-color, 400, 1);
+
         @media screen and (min-width: 992px) {
             text-align: left;
         }
-    }
-    // элементы
-    &__content {
-        position: relative;
-    }
-    &__title {
-        text-transform: capitalize;
-        @include font($section-title-ff, 3.6rem, $section-title-color, 400, 1);
+
+        &--center {
+            text-align: center;
+        }
     }
     &__btn {
         margin-top: 50px;
-    }
-}
-
-.shadow {
-    position: relative;
-
-    &:before {
-        content: '';
-        @include posA;
-        background-color: rgba($body-bg, .9);
     }
 }
 

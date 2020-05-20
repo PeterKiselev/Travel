@@ -1,16 +1,16 @@
 .section {
     &--tourist {
         @media screen and (min-width: 320px) {
-            background-image: url(../img/tourist-bg-sm.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(../img/tourist-bg-sm.jpg);
         }
         @media screen and (min-width: 460px) {
-            background-image: url(../img/tourist-bg-md.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(../img/tourist-bg-md.jpg);
         }
         @media screen and (min-width: 1024px) {
-            background-image: url(../img/tourist-bg.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(../img/tourist-bg.jpg);
         }
         @media screen and (min-width: 1920px) {
-            background-image: url(https://i.picsum.photos/id/685/3000/2000.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(https://i.picsum.photos/id/685/3000/2000.jpg);
         }
     }
 
@@ -24,6 +24,7 @@
 }
 
 .tourist-blog {
+    font-size: 0;
     margin: 0;
     background-color: $section-bg;
     @include flex($jc: center);
@@ -33,49 +34,53 @@
         flex: 1 0 100%;
         max-width: 445px;
         width: 100%;
+        align-self: stretch;
 
         @media screen and (min-width: 992px) {
-            flex: 1 0 40%;
+            flex-basis: auto;
         }
     }
-    &__img-block {
-        display: block;
-        padding-top: 60%;
-        position: relative;
-        overflow: hidden;
-    }
+
     &__img {
-        @include posA(50%, auto, auto, 50%);
-        @include transform;
+        height: 100%;
+        max-width: 100%;
     }
+    
     &__figcaption {
         flex-grow: 1;
         flex-basis: 100%;
         padding: 20px 15px;
 
         @media screen and (min-width: 992px) {
-            flex: 1 0 60%;
+            flex: 1 0 59%;
             text-align: left;
             padding: 25px 50px;
         }
     }
     &__author {
-        display: inline-block;
+        text-align: center;
+        display: block;
         margin-bottom: 30px;
         font-size: 2rem;
         text-transform: uppercase;
         font-style: normal;
         opacity: .95;
+
+        @media screen and (min-width: 992px) {
+            text-align: left;
+        }
     }
     &__blockquote {
+        padding-top: 1em;
+        font-size: 1.6rem;
+        overflow: hidden;
         margin: 0;
         text-indent: 1.5em;
         text-align: justify;
         position: relative;
-        max-height: 390px;
     }
     &__icon {
-        @include posA(-1em, auto, auto, -1.5em);
+        @include posA($left: -1.5em);
         color: $primary-color;
     }
 }

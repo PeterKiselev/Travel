@@ -1,28 +1,33 @@
 .section {
-    &--choose {
+    &--choose {    
+        text-align: center;
+
+        @media screen and (min-width: 992px) {
+            text-align: left;
+        }
         @media screen and (min-width: 320px) {
-            background-image: url(../img/choose-bg-sm.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(../img/choose-bg-sm.jpg);
         }
         @media screen and (min-width: 460px) {
-            background-image: url(../img/choose-bg-md.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(../img/choose-bg-md.jpg);
         }
         @media screen and (min-width: 1024px) {
-            background-image: url(../img/choose-bg.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(../img/choose-bg.jpg);
         }
         @media screen and (min-width: 1920px) {
-            background-image: url(https://i.picsum.photos/id/1040/4496/3000.jpg);
+            background-image: linear-gradient(rgba($body-bg, .9)), url(https://i.picsum.photos/id/1040/4496/3000.jpg);
         }
     }
 }
 
 .description {
     margin-top: 60px;
-    overflow: hidden;
     
     &__text:not(:last-of-type) {
         margin-bottom: 35px;
     }
     &__text {
+        overflow: hidden;
         max-height: 260px;
         display: -webkit-box;
         -webkit-line-clamp: 10;
@@ -51,18 +56,10 @@
 
 .travel {
     display: inline-block;
-    width: 100%;
     max-width: 350px;
     overflow: hidden;
 
     &__img {
         max-width: 100%;
-        image-rendering: -moz-crisp-edges; /* Firefox */
-        -ms-interpolation-mode: nearest-neighbor;  /* IE */
-        image-rendering: crisp-edges; /* Стандартное свойство */
-
-        @include hover {
-            transform: scale(1.1);
-        }
     }
 }
